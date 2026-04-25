@@ -31,11 +31,7 @@ MariaDB → Sqoop → HDFS (Staging) → Spark → Analysis Outputs
 
 ## 📂 Project Structure
 
-* `sql/` → Database schema & data loading
-* `scripts/` → Sqoop ingestion + verification
-* `notebooks/` → Spark ETL & analysis
-* `docs/` → Architecture diagrams
-* `output/` → Sample outputs
+
 
 ---
 
@@ -45,8 +41,8 @@ MariaDB → Sqoop → HDFS (Staging) → Spark → Analysis Outputs
 
 Run:
 
-```sql
-sql/mariaDB_schema.sql
+```
+MariaDB_SQL_Statements.sql
 ```
 
 Creates:
