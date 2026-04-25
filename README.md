@@ -73,11 +73,20 @@ bash scripts/sqoop_ingest_to_hdfs.sh
 
 ---
 
+<img width="1722" height="932" alt="1 sqoop_bash_finish" src="https://github.com/user-attachments/assets/799bf909-c37c-40e9-a75c-c8ea500ff865" />
+
+<img width="1101" height="667" alt="2  data in hdfs" src="https://github.com/user-attachments/assets/53c4d48c-c656-4b03-a8e3-707276656d7d" />
+
+<img width="1103" height="321" alt="3" src="https://github.com/user-attachments/assets/32790c9f-7577-485b-9565-7752d047b540" />
+
 ### 3️⃣ Verify Ingestion
 
 ```bash
 bash scripts/verify_sqoop_ingest_to_hdfs.sh
 ```
+
+<img width="977" height="476" alt="4  verify script" src="https://github.com/user-attachments/assets/84608bdf-b588-4cea-a5d1-da61a241f5ff" />
+
 
 ---
 
