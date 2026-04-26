@@ -33,6 +33,7 @@ MariaDB → Sqoop → HDFS (Staging) → Apache Spark -> Apache Hive -> Power BI
 ---
 
 ## 📂 Project Structure
+```text
 ├── scripts/                            # Bash scripts for Hadoop/Sqoop operations
 │   ├── sqoop_ingest_to_hdfs.sh         # Ingests MariaDB data into HDFS
 │   └── verify_sqoop_ingest_to_hdfs.sh  # Verifies successful HDFS data transfer
@@ -42,6 +43,7 @@ MariaDB → Sqoop → HDFS (Staging) → Apache Spark -> Apache Hive -> Power BI
 ├── README.md                           # Project documentation
 ├── bike-store-dashboard-project.pbix   # Power BI interactive dashboard file
 └── bike_store_spark.ipynb              # Jupyter Notebook for PySpark ETL transformations
+```
 
 
 ---
