@@ -151,8 +151,8 @@ The Spark outputs are mapped to External Tables in Apache Hive to allow standard
 
 The following analytical queries were executed in Hive (Hue) to generate the final business reports:
 
+**Q1: Which store generates the most revenue?**
 ```sql
--- Q1: Which store generates the most revenue?
 SELECT 
     store_name, 
     city, 
@@ -162,11 +162,13 @@ SELECT
     ROUND(total_revenue / total_orders, 2) AS avg_order_value
 FROM revenue_by_store
 ORDER BY total_revenue DESC;
-
+```
+<br>
 <img width="1317" height="673" alt="1" src="https://github.com/user-attachments/assets/ac8eab37-0792-4c1d-9b37-3dd8e2f0658a" />
+<br><br>
 
-
--- Q2: Best-selling category by units sold?
+**Q2: Best-selling category by units sold?**
+```sql
 SELECT 
     category_name,
     total_units_sold,
@@ -174,11 +176,13 @@ SELECT
     ROUND(total_revenue / total_units_sold, 2) AS avg_price_per_unit
 FROM revenue_by_category
 ORDER BY total_units_sold DESC;
-
+```
+<br>
 <img width="1278" height="632" alt="2" src="https://github.com/user-attachments/assets/b64b2f0e-c144-4870-b0ba-3f5dc43f549a" />
+<br><br>
 
-
--- Q3: Top 5 customers by lifetime value?
+**Q3: Top 5 customers by lifetime value?**
+```sql
 SELECT 
     customer_name, 
     customer_city, 
@@ -189,11 +193,13 @@ SELECT
 FROM top_customers
 ORDER BY lifetime_value DESC
 LIMIT 5;
-
+```
+<br>
 <img width="1295" height="622" alt="3" src="https://github.com/user-attachments/assets/56a1b27e-97ad-4409-8dee-70a66531cb40" />
+<br><br>
 
-
--- Q4: Which year had the highest revenue?
+**Q4: Which year had the highest revenue?**
+```sql
 SELECT 
     year,
     ROUND(SUM(total_revenue), 2) AS yearly_revenue,
@@ -202,11 +208,13 @@ SELECT
 FROM monthly_revenue
 GROUP BY year
 ORDER BY yearly_revenue DESC;
-
+```
+<br>
 <img width="1293" height="545" alt="4" src="https://github.com/user-attachments/assets/5b8a2d91-3e46-4cd2-8275-b6797d140274" />
+<br><br>
 
-
--- Q5: Which staff member handled the most orders?
+**Q5: Which staff member handled the most orders?**
+```sql
 SELECT 
     staff_name, 
     store_name,
@@ -216,11 +224,13 @@ SELECT
 FROM staff_performance
 ORDER BY completed_orders DESC
 LIMIT 5;
-
+```
+<br>
 <img width="1277" height="601" alt="5" src="https://github.com/user-attachments/assets/eb37ead6-5429-4a8f-b85f-8e5f687b4724" />
+<br><br>
 
-
--- Q6: Stores with critical stock levels (quantity = 0)?
+**Q6: Stores with critical stock levels (quantity = 0)?**
+```sql
 SELECT 
     store_name,
     COUNT(*) AS out_of_stock_products
@@ -228,11 +238,12 @@ FROM low_stock_alert
 WHERE quantity = 0
 GROUP BY store_name
 ORDER BY out_of_stock_products DESC;
-
+```
+<br>
 <img width="1307" height="485" alt="6" src="https://github.com/user-attachments/assets/c51172b0-0a69-4ab1-906e-a1237067cdea" />
 
-```
 ---
+
 
 ### 6. Data Visualization (Power BI)
 
